@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  padding: 3rem;
+}
+
+.container {
+  display: flex;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  border: 1px lightgray solid;
+  border-radius: 8px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.container .box {
+  flex: 1;
+}
+
+.container .box:first-child {
+  position: relative;
+}
+
+.container .backgroundFrame {
+  position: absolute;
+  top: 0;
+  bottom: 20px;
+  left: 20px;
+  right: 0;
+  background-image: url('./assets/sas-star-alliance-a319ceo-8k-80631-1675702620-VTM6w.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container .overFrame {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+  padding: 50px 50px 80px;
+  background-color: rgba(0, 6, 32, 0.75);
+}
+
+.container .overFrame h1 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #e8e8ea;
+  margin: 0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, white, white);
+  background-position: bottom;
+  background-size: 60px 3px;
+  background-repeat: no-repeat;
+}
+
+.container .overFrame p {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  color: rgb(168, 168, 168);
+}
+
+.container .box .formBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  height: 100%;
+  justify-content: center;
+}
+
+.container .box .formBox .signInBtn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.container .box .formBox .form {
+  margin-block: 40px;
+}
+
+.container .box .formBox .form h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #562ed8;
+}
+
+.container .box .formBox .form p:not(.alert) {
+  font-size: 12px;
+  font-weight: 500;
+  margin-block: 5px 25px;
+  color: #562ed8;
+}
+
+.container .box .formBox .form .grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+}
+
+.container .box .formBox .form .grid div {
+  position: relative;
+}
+
+.container .box .formBox .form .grid .full {
+  grid-column: span 2;
+}
+
+.container .box .formBox .form .grid input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  outline-color: #562ed8;
+  outline-width: 1px !important;
+}
+
+input::placeholder {
+  font-size: 12px;
+  color: rgb(143, 143, 143);
+}
+
+
+@media screen and (max-width:760px) {
+  #root {
+    padding: 0;
+  }
+  .container {
+    flex-direction: column;
+    border: none;
+    overflow: auto;
+  }
+  .container .box:first-child {
+    flex: none;
+    height: 240px;
+  }
+  .container .box:last-child {
+    flex: none;
+  }
+  .container .backgroundFrame {
+    bottom: 0;
+    left: 0;
+  }
+  .container .overFrame {
+    top: 0;
+    right: 0;
+    padding: 20px;
+    place-content: center;
+  }
+  .container .box .formBox {
+    padding: 20px;
+  }
+  .container .box .formBox .signInBtn {
+    position: static;
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 30px;
+  }
+  .container .box .formBox .form {
+    margin-block: auto;
+  }
+}
